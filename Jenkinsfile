@@ -7,14 +7,14 @@ pipeline {
             steps {
 
                 // Build your Go application
-                sh "go build -o myapp ./main.go"
+                sh "go build -o myapp main.go"
             }
         }
         
         stage('Test') {
             steps {
                 // Run tests
-                sh "go test ./main_test.go main.go"
+                sh "go test main_test.go main.go"
             }
         }
         
