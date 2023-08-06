@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout your code from your Git repository
-                git clone https://github.com/rtpro/golang-helloworld.git
-            }
-        }
         
         stage('Build') {
             steps {
