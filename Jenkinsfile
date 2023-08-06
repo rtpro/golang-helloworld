@@ -1,5 +1,6 @@
 pipeline {
     agent { label 'slave1' }
+    tools { go '1.20' }
 
     stages {
         
