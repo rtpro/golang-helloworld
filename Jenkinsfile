@@ -1,10 +1,6 @@
 pipeline {
     agent { label 'slave1' }
-    tools { go '1.20' }
-    environment {
-        GOPATH = "${WORKSPACE}/go"
-        PATH = "${GOPATH}/bin:${PATH}"
-    }
+
     
     stages {
         
