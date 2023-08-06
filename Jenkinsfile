@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your code from your Git repository
-                checkout scm
+                git clone https://github.com/rtpro/golang-helloworld.git
             }
         }
         
@@ -16,7 +16,7 @@ pipeline {
                 env.PATH = "${goHome}/bin:${env.PATH}"
                 
                 // Build your Go application
-                sh "go build -o myapp ./path/to/your/app"
+                sh "go build -o myapp ./main.go"
             }
         }
         
@@ -27,7 +27,7 @@ pipeline {
                 env.PATH = "${goHome}/bin:${env.PATH}"
                 
                 // Run tests
-                sh "go test ./path/to/your/app/..."
+                sh "go test ./main_test.go main.go"
             }
         }
         
