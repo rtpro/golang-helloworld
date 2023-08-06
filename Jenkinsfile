@@ -5,10 +5,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                // Set up Go environment
-                def goHome = tool name: 'Go', type: 'GoInstallation'
-                env.PATH = "${goHome}/bin:${env.PATH}"
-                
+
                 // Build your Go application
                 sh "go build -o myapp ./main.go"
             }
@@ -16,10 +13,6 @@ pipeline {
         
         stage('Test') {
             steps {
-                // Set up Go environment if not already done
-                def goHome = tool name: 'Go', type: 'GoInstallation'
-                env.PATH = "${goHome}/bin:${env.PATH}"
-                
                 // Run tests
                 sh "go test ./main_test.go main.go"
             }
